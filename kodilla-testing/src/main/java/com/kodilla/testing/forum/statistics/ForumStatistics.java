@@ -15,9 +15,20 @@ public class ForumStatistics {
         amountOfUsers = statistics.usersNames().size();
         amountOfPosts = statistics.postsCount();
         amountOfComments = statistics.commentsCount();
-        avaragePostsPerUser = (double) amountOfPosts / (double) amountOfUsers;
-        avarageCommentsPerUser = (double) amountOfComments / (double) amountOfUsers;
-        averageCommentsPerPost = (double) amountOfComments / (double) amountOfPosts;
+        if (statistics.usersNames().size() == 0) {
+            System.out.println("User list is empty");
+            avaragePostsPerUser = 0;
+            avarageCommentsPerUser = 0;
+        } else {
+            avaragePostsPerUser = (double) amountOfPosts / (double) amountOfUsers;
+            avarageCommentsPerUser = (double) amountOfComments / (double) amountOfUsers;
+        }
+        if (statistics.postsCount() == 0) {
+            System.out.println("This post has no comments");
+            averageCommentsPerPost = 0;
+        } else {
+            averageCommentsPerPost = (double) amountOfComments / (double) amountOfPosts;
+        }
     }
 
     public int getAmountOfUsers() {
