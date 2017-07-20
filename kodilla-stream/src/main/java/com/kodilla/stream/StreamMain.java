@@ -1,38 +1,18 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.iterate.NumbersGenerator;
-import com.kodilla.stream.lambda.ExecuteSaySomething;
-import com.kodilla.stream.lambda.Executor;
-import com.kodilla.stream.lambda.ExpressionExecutor;
-import com.kodilla.stream.lambda.Processor;
-import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.book.Book;
+import com.kodilla.stream.book.BookDirectory;
+
+import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
-        Processor processor = new Processor();
-        ExecuteSaySomething executeSaySomething = new ExecuteSaySomething();
-        processor.execute(executeSaySomething);
+        BookDirectory theBookDirectory = new BookDirectory();
+        String theResultStringOfBooks = theBookDirectory.getList().stream()
+                .filter(book -> book.getYearOfPublication() > 2005)
+                .map(Book::toString)
+                .collect(Collectors.joining(",\n","<<",">>"));
 
-        //lambda expressions
-        Executor codeToExecute = () -> System.out.println("This is an example text two.");
-        processor.execute(codeToExecute);
-        processor.execute(() -> System.out.println("This is an example text three."));
-
-        //math expression
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
-        System.out.println(expressionExecutor.executeExpression(10, 5, (a, b) -> a + b));
-        System.out.println(expressionExecutor.executeExpression(10, 5, (a, b) -> a - b));
-        System.out.println(expressionExecutor.executeExpression(10, 5, (a, b) -> a * b));
-        System.out.println(expressionExecutor.executeExpression(10, 5, (a, b) -> a / b));
-
-        //method reference
-        System.out.println(expressionExecutor.executeExpression(30, 15, FunctionalCalculator::addAToB));
-        System.out.println(expressionExecutor.executeExpression(30, 15, FunctionalCalculator::subBFromA));
-        System.out.println(expressionExecutor.executeExpression(30, 15, FunctionalCalculator::multiplyAByB));
-        System.out.println(expressionExecutor.executeExpression(30, 15, FunctionalCalculator::divideAByB));
-
-        //stream iterate
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
+        System.out.println(theResultStringOfBooks);
     }
 }
