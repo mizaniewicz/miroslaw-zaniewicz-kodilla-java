@@ -9,5 +9,4 @@ public final class NumbersGenerator {
                 .filter(n -> n % 2 == 0)
                 .forEach(System.out::println);
     }
-
 }
