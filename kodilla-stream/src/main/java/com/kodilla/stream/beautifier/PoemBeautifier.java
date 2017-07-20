@@ -5,3 +5,4 @@ public class PoemBeautifier {
         return poemDecorator.decorate(poem);
     }
 }
+.
