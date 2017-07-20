@@ -11,4 +11,3 @@ public class PoemMain {
         System.out.println(poemBeautifier.beautify("litwo ojczyzno moja ty jesteś jak zdrowie", poem -> poem.replace("o", "0").replace("e", "3")));
     }
 }
-.
