@@ -83,6 +83,7 @@ public class ForumStatisticsTestSuite {
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
         Assert.assertEquals(0.5, forumStatistics.getAverageCommentsPerPost(), 0.01);
+        Assert.assertEquals(10, forumStatistics.getAvarageCommentsPerUser(), 0.01);
     }
     @Test
     public void testPostsCountIsLessThanCommentsCount() {
@@ -100,6 +101,7 @@ public class ForumStatisticsTestSuite {
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
         Assert.assertEquals(2, forumStatistics.getAverageCommentsPerPost(), 0.01);
+        Assert.assertEquals(20, forumStatistics.getAvarageCommentsPerUser(), 0.01);
     }
     @Test
     public void testUsersAmountIsZero() {
