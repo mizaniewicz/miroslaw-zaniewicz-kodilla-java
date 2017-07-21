@@ -1,7 +1,4 @@
-package com.kodilla.stream;
-
-import com.kodilla.stream.forum.Forum;
-import com.kodilla.stream.forum.ForumUser;
+package com.kodilla.stream.forum;
 
 import java.util.Map;
 import java.util.stream.Collectors;

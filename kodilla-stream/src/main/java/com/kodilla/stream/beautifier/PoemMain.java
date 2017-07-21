@@ -1,6 +1,4 @@
-package com.kodilla.stream;
-
-import com.kodilla.stream.beautifier.PoemBeautifier;
+package com.kodilla.stream.beautifier;
 
 public class PoemMain {
     public static void main(String[] args) {
