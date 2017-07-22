@@ -24,8 +24,4 @@ public final class SimpleProduct {
         SimpleProduct that = (SimpleProduct) o;
         return productName.equals(that.productName);
     }
-
-    public double getValue(int quantity) {
-        return quantity * productPrice;
-    }
 }
