@@ -12,9 +12,9 @@ public final class World {
         continents.add(continent);
     }
 
-    public Set<String> getPeopleQuantity() {
-        return continents.stream()
-                .map(continent -> continent.getCountries())
-                .collect(Collectors.toSet());
-    }
+//    public Set<> getPeopleQuantity() {
+//        return continents.stream()
+//                .map(continent -> continent.getCountries())
+//                .collect(Collectors.toSet());
+//    }
 }

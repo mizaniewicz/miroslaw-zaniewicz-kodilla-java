@@ -12,6 +12,6 @@ public class TestMain {
         europe.addCountry(germany);
         world.addContinent(europe);
 
-        System.out.println(world.getPeopleQuantity());
+
     }
 }
