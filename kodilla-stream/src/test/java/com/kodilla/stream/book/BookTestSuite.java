@@ -39,4 +39,3 @@ public class BookTestSuite {
         Assert.assertEquals(3, numberOfBooksPublicatedAfter2007);
     }
 }
-.
