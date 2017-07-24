@@ -10,7 +10,7 @@ public class ForumMain {
         Forum forum = new Forum();
         Map<Integer, ForumUser> mapOfForumUsers = forum.getForumUsersList().stream()
                 .filter(forumUser -> forumUser.getSex() == 'M')
-                .filter(forumUser -> Period.between(forumUser.getBirthDate(), LocalDate.now()).getYears() > 20)
+                .filter(forumUser -> Period.between(forumUser.getBirthDate(), LocalDate.now()).getYears() >= 20)
                 .filter(forumUser -> forumUser.getPostsAmount() >= 1)
                 .collect(Collectors.toMap(ForumUser::getUserId, forumUser -> forumUser));
 
