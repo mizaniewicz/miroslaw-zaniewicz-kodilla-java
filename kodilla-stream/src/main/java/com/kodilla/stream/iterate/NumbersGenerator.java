@@ -10,4 +10,3 @@ public final class NumbersGenerator {
                 .forEach(System.out::println);
     }
 }
-.
