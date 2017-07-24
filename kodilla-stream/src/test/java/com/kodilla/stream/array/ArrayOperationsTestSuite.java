@@ -29,8 +29,8 @@ public class ArrayOperationsTestSuite {
         numbers[18] = 831;
         numbers[19] = 550;
         //When
-        double avarage  = ArrayOperations.getAvarage(numbers);
+        double average  = ArrayOperations.getAvarage(numbers);
         //Then
-        Assert.assertEquals(256.7, avarage, 0.001);
+        Assert.assertEquals(256.7, average, 0.001);
     }
 }

@@ -9,12 +9,12 @@ public interface ArrayOperations {
                 .forEach(n -> System.out.print(n + " "));
         System.out.println();
 
-        double avarage = IntStream.range(0, numbers.length)
+        double average = IntStream.range(0, numbers.length)
                 .map(n -> numbers[n])
                 .average()
                 .getAsDouble();
 
-        System.out.println("Numbers average: " + avarage);
-        return avarage;
+        System.out.println("Numbers average: " + average);
+        return average;
     }
 }
