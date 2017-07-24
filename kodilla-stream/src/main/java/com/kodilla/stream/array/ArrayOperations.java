@@ -9,7 +9,9 @@ public interface ArrayOperations {
 //                .mapToObj(n -> numbers[n])
 //                .collect(Collectors.toList());
 
-        Arrays.stream(numbers).forEach(n -> System.out.print(n + " "));
+        IntStream.range(0, numbers.length)
+                .map(x -> numbers[x])
+                .forEach(n -> System.out.print(n + " "));
         System.out.println();
 
         double avarage = IntStream.range(0, numbers.length)
