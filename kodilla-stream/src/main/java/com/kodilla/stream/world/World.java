@@ -8,13 +8,18 @@ import java.util.stream.Collectors;
 public final class World {
     private final Set<Continent> continents = new HashSet<>();
 
+    public Set<Continent> getContinents() {
+        return continents;
+    }
+
     public void addContinent(Continent continent) {
         continents.add(continent);
     }
 
-//    public Set<> getPeopleQuantity() {
-//        return continents.stream()
-//                .map(continent -> continent.getCountries())
-//                .collect(Collectors.toSet());
-//    }
+    public BigDecimal getPeopleQuantity() {
+        return continents.stream()
+                .flatMap(n -> n.getCountries().stream())
+                .map(Country::getPeopleQuantity)
+                .reduce(BigDecimal.ZERO, (sum, current) -> sum.add(current));
+    }
 }

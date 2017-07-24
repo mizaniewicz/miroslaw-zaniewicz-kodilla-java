@@ -7,7 +7,7 @@ public final class Continent {
     private final String continent;
     private final Set<Country> countries = new HashSet<>();
 
-    public Continent(String continent) {
+    public Continent(final String continent) {
         this.continent = continent;
     }
 
