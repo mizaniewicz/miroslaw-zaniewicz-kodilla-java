@@ -144,14 +144,21 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        List<Integer> tasks = project.getTaskLists().stream()
+//        List<Integer> tasks = project.getTaskLists().stream()
+//                .filter(inProgressTasks::contains)
+//                .flatMap(tl -> tl.getTasks().stream())
+//                .map(t -> Period.between(t.getCreated(), LocalDate.now()).getDays())
+//                .collect(toList());
+//
+//        double averageDaysPerTask = IntStream.range(0, tasks.size())
+//                .map(n -> tasks.get(n))
+//                .average()
+//                .getAsDouble();
+
+        double averageDaysPerTask = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(t -> Period.between(t.getCreated(), LocalDate.now()).getDays())
-                .collect(toList());
-
-        double averageDaysPerTask = IntStream.range(0, tasks.size())
-                .map(n -> tasks.get(n))
+                .mapToInt(t -> Period.between(t.getCreated(), LocalDate.now()).getDays())
                 .average()
                 .getAsDouble();
 
