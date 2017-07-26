@@ -11,7 +11,7 @@ public class SecondChallenge {
     public static void main(String[] args) {
         SecondChallenge secondChallenge = new SecondChallenge();
         try {
-            String s = secondChallenge.probablyIWillThrowException(1, 1.5).toString();
+            String s = secondChallenge.probablyIWillThrowException(1, 1.5);
             System.out.println(s);
         } catch (ExceptionHandling e) {
             System.out.println("Conditions are not fulfilled: x < 2 or x >= 1 or y != 1.5");
