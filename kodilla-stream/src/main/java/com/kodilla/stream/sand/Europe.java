@@ -9,4 +9,3 @@ public final class Europe implements SandStorage {
         return sandQuantity;
     }
 }
-.

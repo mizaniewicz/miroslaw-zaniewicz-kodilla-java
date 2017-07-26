@@ -20,4 +20,3 @@ public final class SimpleInvoice {
                 .collect(Collectors.summingDouble(SimpleItem::getValue));
     }
 }
-.

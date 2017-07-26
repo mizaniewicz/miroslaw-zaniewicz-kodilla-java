@@ -9,4 +9,3 @@ public final class Africa implements SandStorage {
         return sandQuantity;
     }
 }
-.
