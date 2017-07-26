@@ -25,3 +25,4 @@ public final class SimpleProduct {
         return productName.equals(that.productName);
     }
 }
+.

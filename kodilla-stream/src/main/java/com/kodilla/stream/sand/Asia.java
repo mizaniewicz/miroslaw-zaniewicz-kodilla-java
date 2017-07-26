@@ -9,3 +9,4 @@ public final class Asia implements SandStorage {
         return sandQuantity;
     }
 }
+.

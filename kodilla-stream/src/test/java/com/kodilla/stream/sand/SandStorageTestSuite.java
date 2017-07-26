@@ -45,3 +45,4 @@ public class SandStorageTestSuite {
         Assert.assertEquals(expectedSand, totalSand);
     }
 }
+.
