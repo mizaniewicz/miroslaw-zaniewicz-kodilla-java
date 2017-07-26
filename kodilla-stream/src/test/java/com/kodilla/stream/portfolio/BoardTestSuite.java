@@ -155,3 +155,4 @@ public class BoardTestSuite {
         Assert.assertEquals(10, averageDaysPerTask, 0.001);
     }
 }
+.

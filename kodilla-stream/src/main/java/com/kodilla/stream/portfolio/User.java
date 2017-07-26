@@ -34,3 +34,4 @@ public final class User {
         return username.equals(user.username);
     }
 }
+.
