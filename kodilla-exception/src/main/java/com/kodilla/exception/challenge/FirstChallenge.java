@@ -1,22 +1,19 @@
 package com.kodilla.exception.challenge;
 
 public class FirstChallenge {
-    private double result;
-
-    public double divide(double a, double b) {
+    public void divide(int a, int b) {
         try {
-            result = a / b;
+            int result = a / b;
+            System.out.println(result);
         } catch (ArithmeticException e) {
             System.out.println("Invalid operation, division by zero.\n" + e);
         } finally {
             System.out.println("We are servants rather than masters in mathematics.");
         }
-        return result;
     }
 
     public static void main(String[] args) {
         FirstChallenge firstChallenge = new FirstChallenge();
-        double result = firstChallenge.divide(3, 0);
-        System.out.println(result);
+        firstChallenge.divide(3, 0);
     }
 }
