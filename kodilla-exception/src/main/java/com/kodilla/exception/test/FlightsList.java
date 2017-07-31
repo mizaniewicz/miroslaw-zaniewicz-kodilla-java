@@ -10,7 +10,7 @@ public class FlightsList {
         flightList.put("London", true);
         flightList.put("New York", false);
         flightList.put("Seattle", false);
-        if (flightList.get(flight.getDepartureAirport()) == null) {
+        if (!flightList.containsKey(flight.getDepartureAirport())) {
             throw new RouteNotFoundException();
         }
         return flightList.get(flight.getDepartureAirport());
