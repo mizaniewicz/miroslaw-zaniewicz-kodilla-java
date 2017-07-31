@@ -6,7 +6,7 @@ public class RouteNotFoundRunner {
         Flight warsaw = new Flight("Warsaw");
 
         try {
-            if (flightsList.findFight(warsaw)) {
+            if (flightsList.findFlight(warsaw)) {
                 System.out.println("Flight is available");
             } else {
                 System.out.println("Flight is not available");
