@@ -29,6 +29,6 @@ public class OrderRequest {
 
     @Override
     public String toString() {
-        return "Your order from " + supplier + " " + product + ", quantity=" + quantity + ", total price=" + totalPrice();
+        return "Your order from " + supplier + ", " + product + ", quantity=" + quantity + ", total price=" + totalPrice();
     }
 }
