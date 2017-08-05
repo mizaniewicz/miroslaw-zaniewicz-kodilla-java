@@ -14,12 +14,12 @@ public class ProductOrderService {
     }
 
     public OrderDTO process (final OrderRequest orderRequest) {
-        boolean isBuyed = orderService.order(orderRequest.getUser(), orderRequest.getProduct());
+        boolean isBought = orderService.order(orderRequest.getUser(), orderRequest.getProduct());
 
-        if (isBuyed) {
-            informationService.inform(orderRequest.getUser());
+        if (isBought) {
             productOrderRepository.createOrder(orderRequest.getUser(), orderRequest.getProduct());
-            System.out.println(orderRequest.getProduct());
+            System.out.println(orderRequest.toString());
+            informationService.inform(orderRequest.getUser());
             return new OrderDTO(orderRequest.getUser(), true);
         } else {
             return new OrderDTO(orderRequest.getUser(), false);

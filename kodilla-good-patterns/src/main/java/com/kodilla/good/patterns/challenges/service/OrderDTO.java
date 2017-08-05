@@ -2,18 +2,18 @@ package com.kodilla.good.patterns.challenges.service;
 
 public class OrderDTO {
     public User user;
-    public boolean isBuyed;
+    public boolean isBought;
 
-    public OrderDTO(final User user, final boolean isBuyed) {
+    public OrderDTO(final User user, final boolean isBought) {
         this.user = user;
-        this.isBuyed = isBuyed;
+        this.isBought = isBought;
     }
 
     public User getUser() {
         return user;
     }
 
-    public boolean isBuyed() {
-        return isBuyed;
+    public boolean isBought() {
+        return isBought;
     }
 }
