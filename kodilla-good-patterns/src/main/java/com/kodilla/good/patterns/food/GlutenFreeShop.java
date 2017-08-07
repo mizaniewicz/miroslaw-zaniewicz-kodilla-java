@@ -1,8 +1,8 @@
 package com.kodilla.good.patterns.food;
 
-public class ExtraFoodShop implements Supplier {
-    private static final String NAME = "Extra Food Shop";
-    private static final String ADDRESS = "Warszawa";
+public class GlutenFreeShop implements Supplier {
+    private static final String NAME = "Gluten Free Shop";
+    private static final String ADDRESS = "Wrocław";
 
     public String getName() {
         return NAME;
@@ -14,7 +14,7 @@ public class ExtraFoodShop implements Supplier {
 
     @Override
     public OrderDTO process(OrderRequest orderRequest) {
-        System.out.println("Extra Food Shop");
+        System.out.println("Gluten Free Shop");
         return new OrderDTO(orderRequest.getSupplier(), orderRequest.getProduct(), true);
     }
 

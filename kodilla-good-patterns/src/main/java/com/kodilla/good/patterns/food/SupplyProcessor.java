@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.food;
 
-public class SupplyService {
+public class SupplyProcessor {
     public boolean supply(OrderRequest orderRequest) {
         Supplier supplier = orderRequest.getSupplier();
-        supplier.process(orderRequest.getProduct());
+        supplier.process(orderRequest);
         System.out.println(orderRequest.toString());
         return true;
     }
