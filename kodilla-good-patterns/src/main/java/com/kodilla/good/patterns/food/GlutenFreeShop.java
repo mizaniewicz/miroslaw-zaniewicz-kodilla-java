@@ -13,9 +13,9 @@ public class GlutenFreeShop implements Supplier {
     }
 
     @Override
-    public OrderDTO process(OrderRequest orderRequest) {
+    public boolean process(OrderRequest orderRequest) {
         System.out.println("Gluten Free Shop");
-        return new OrderDTO(orderRequest.getSupplier(), orderRequest.getProduct(), true);
+        return true;
     }
 
     @Override

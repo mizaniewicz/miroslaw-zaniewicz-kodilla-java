@@ -13,9 +13,9 @@ public class ExtraFoodShop implements Supplier {
     }
 
     @Override
-    public OrderDTO process(OrderRequest orderRequest) {
+    public boolean process(OrderRequest orderRequest) {
         System.out.println("Extra Food Shop");
-        return new OrderDTO(orderRequest.getSupplier(), orderRequest.getProduct(), true);
+        return true;
     }
 
     @Override

@@ -13,9 +13,9 @@ public class HealthyShop implements Supplier {
     }
 
     @Override
-    public OrderDTO process(OrderRequest orderRequest) {
+    public boolean process(OrderRequest orderRequest) {
         System.out.println("Healthy Shop");
-        return new OrderDTO(orderRequest.getSupplier(), orderRequest.getProduct(), true);
+        return true;
     }
 
     @Override

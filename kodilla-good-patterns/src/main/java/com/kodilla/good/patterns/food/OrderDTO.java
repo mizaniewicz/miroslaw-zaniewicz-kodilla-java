@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.food;
 
 public class OrderDTO {
-    public Supplier supplier;
-    public Product product;
-    public boolean isOrdered;
+    private final Supplier supplier;
+    private final Product product;
+    private final boolean isOrdered;
 
     public OrderDTO(final Supplier supplier, final Product product, final boolean isOrdered) {
         this.supplier = supplier;

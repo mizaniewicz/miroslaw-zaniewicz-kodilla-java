@@ -7,7 +7,7 @@ public class Application {
 
     public static void main(String[] args) {
         OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
-        OrderRequest orderRequest = orderRequestRetriever.retrieve(Company.ExtraFoodShop);
+        OrderRequest orderRequest = orderRequestRetriever.retrieve(Company.HealthyShop);
         SupplyProcessor supplyProcessor = new SupplyProcessor();
         supplyProcessor.supply(orderRequest);
     }
