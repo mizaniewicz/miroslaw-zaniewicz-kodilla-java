@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.flights;
 
-import java.util.HashMap;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class FlightsList {
+public class FlightSearchService {
     private final HashMap<Integer, Flight> flightsList = new HashMap<>();
 
     public HashMap<Integer, Flight> getFlightsList() {
@@ -36,24 +36,26 @@ public class FlightsList {
         return arrivals;
     }
 
-    public String searchTransfer(Airport start, Airport middle, Airport end) {
-        String searchTransfer1 = flightsList.values().stream()
+    public List<Flight> searchTransfer(Airport start, Airport middle, Airport end) {
+        List<Flight> transferFlight = new ArrayList<>();
+
+        Flight searchTransfer1 = flightsList.values().stream()
                 .filter(flight -> flight.getDepartureAirport().equals(start))
                 .filter(flight -> flight.getDestinationAirport().equals(middle))
-                .collect(Collectors.toList())
-                .toString();
-        String searchTransfer2 = flightsList.values().stream()
+                .findAny().get();
+        Flight searchTransfer2 = flightsList.values().stream()
                 .filter(flight -> flight.getDepartureAirport().equals(middle))
                 .filter(flight -> flight.getDestinationAirport().equals(end))
-                .collect(Collectors.toList())
-                .toString();
-        String transitFlights = searchTransfer1.concat(searchTransfer2);
-        return transitFlights;
+                .findAny().get();
+
+        transferFlight.add(searchTransfer1);
+        transferFlight.add(searchTransfer2);
+        return transferFlight;
     }
 
     @Override
     public String toString() {
-        return "FlightsList{" +
+        return "FlightSearchService{" +
                 "flightsList=" + flightsList +
                 '}';
     }
