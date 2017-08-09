@@ -1,8 +1,8 @@
 package com.kodilla.good.patterns.food;
 
 public class OrderRequestRetriever {
-    public OrderRequest retrieve(Application.Company company) {
-        Supplier supplier = null;
+    public OrderRequest retrieve(Application.Company company) throws SupplierNotAvailableException {
+        Supplier supplier;
         switch (company) {
             case ExtraFoodShop:
                 supplier = new ExtraFoodShop();
@@ -13,6 +13,8 @@ public class OrderRequestRetriever {
             case GlutenFreeShop:
                 supplier = new GlutenFreeShop();
                 break;
+            default:
+                throw new SupplierNotAvailableException();
         }
 
         Product potatoes = new Product("potatoes", 25);
