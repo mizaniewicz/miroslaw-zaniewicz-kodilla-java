@@ -18,20 +18,18 @@ public class FlightSearchService {
         flightsList.remove(flight.getFlightNumber());
     }
 
-    public String searchDepartures(Airport airport) {
-        String departures = flightsList.values().stream()
+    public List<Flight> searchDepartures(Airport airport) {
+        List<Flight> departures = flightsList.values().stream()
                 .filter(flight -> flight.getDepartureAirport().equals(airport))
-                .collect(Collectors.toList())
-                .toString();
+                .collect(Collectors.toList());
 
         return departures;
     }
 
-    public String searchArrivals(Airport airport) {
-        String arrivals = flightsList.values().stream()
+    public List<Flight> searchArrivals(Airport airport) {
+        List<Flight> arrivals = flightsList.values().stream()
                 .filter(flight -> flight.getDestinationAirport().equals(airport))
-                .collect(Collectors.toList())
-                .toString();
+                .collect(Collectors.toList());
 
         return arrivals;
     }
