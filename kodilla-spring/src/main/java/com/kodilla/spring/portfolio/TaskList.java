@@ -7,10 +7,10 @@ import java.util.List;
 
 @Component
 public class TaskList {
-    private List<String> tasks = new ArrayList<>();
+    private List<String> tasks;
 
     public TaskList() {
-        this.tasks = tasks;
+        this.tasks = new ArrayList<>();
     }
 
     public void addTask(String task) {
