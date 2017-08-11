@@ -17,6 +17,7 @@ public class BoardTestSuite {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
+
         //When
         board.getToDoList().addTask("test1");
         board.getInProgressList().addTask("test2");
