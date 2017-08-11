@@ -21,9 +21,13 @@ public class BoardTestSuite {
         board.getToDoList().addTask("test1");
         board.getInProgressList().addTask("test2");
         board.getDoneList().addTask("test3");
+
         //Then
-        Assert.assertEquals("[test1]", board.getToDoList().toString());
-        Assert.assertEquals("[test2]", board.getInProgressList().toString());
-        Assert.assertEquals("[test3]", board.getDoneList().toString());
+        Assert.assertEquals(1, board.getToDoList().getTasks().size());
+        Assert.assertEquals("test1", board.getToDoList().getTasks().get(0));
+        Assert.assertEquals(1, board.getInProgressList().getTasks().size());
+        Assert.assertEquals("test2", board.getInProgressList().getTasks().get(0));
+        Assert.assertEquals(1, board.getDoneList().getTasks().size());
+        Assert.assertEquals("test3", board.getDoneList().getTasks().get(0));
     }
 }
