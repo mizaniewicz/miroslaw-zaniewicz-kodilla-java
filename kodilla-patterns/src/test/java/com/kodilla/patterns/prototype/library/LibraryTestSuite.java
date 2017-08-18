@@ -21,14 +21,16 @@ public class LibraryTestSuite {
             clonedLibrary = library.shallowCopy();
             clonedLibrary.setName("library 2");
         } catch (CloneNotSupportedException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         //When
+        library.getBooks().add(new Book("title6", "author6", LocalDate.of(2001, 1, 1)));
         //Then
         System.out.println(library);
         System.out.println(clonedLibrary);
-        Assert.assertEquals(5, library.getBooks().size());
-        Assert.assertEquals(5, clonedLibrary.getBooks().size());
+        Assert.assertEquals(6, library.getBooks().size());
+        Assert.assertEquals(6, clonedLibrary.getBooks().size());
+        Assert.assertEquals("library 2", clonedLibrary.getName());
     }
 
     @Test
@@ -45,7 +47,7 @@ public class LibraryTestSuite {
             deepClonedLibrary = library.deepCopy();
             deepClonedLibrary.setName("library 2");
         } catch (CloneNotSupportedException e) {
-            System.out.println("e");
+            e.printStackTrace();
         }
 
         //When
@@ -55,5 +57,6 @@ public class LibraryTestSuite {
         System.out.println(deepClonedLibrary);
         Assert.assertEquals(6,library.getBooks().size());
         Assert.assertEquals(5,deepClonedLibrary.getBooks().size());
+        Assert.assertEquals("library 2", deepClonedLibrary.getName());
     }
 }
