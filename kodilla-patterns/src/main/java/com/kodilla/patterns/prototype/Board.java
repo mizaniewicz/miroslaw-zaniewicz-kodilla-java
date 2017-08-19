@@ -25,11 +25,11 @@ public class Board extends Prototype {
 
     @Override
     public String toString() {
-        String s = "Board [" + name + "]\n";
+        StringBuilder s = new StringBuilder("Board [" + name + "]\n");
         for(TasksList list : lists) {
-            s= new StringBuilder(s).append(list + "\n").toString();
+            s.append(list + "\n");
         }
-        return s;
+        return s.toString();
     }
 
     public Board shallowCopy() throws CloneNotSupportedException {

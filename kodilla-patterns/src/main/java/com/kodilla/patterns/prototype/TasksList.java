@@ -21,10 +21,10 @@ public class TasksList {
 
     @Override
     public String toString() {
-        String s = "   List [" + name + "]";
+        StringBuilder s = new StringBuilder("   List [" + name + "]" + "\n");
         for(Task task : tasks) {
-            s = new StringBuilder(s + "\n").append(task).toString();
+            s = s.append(task + "\n");
         }
-        return s;
+        return s.toString();
     }
 }
