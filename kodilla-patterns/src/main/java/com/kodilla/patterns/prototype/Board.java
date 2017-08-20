@@ -27,7 +27,7 @@ public class Board extends Prototype {
     public String toString() {
         StringBuilder s = new StringBuilder("Board [" + name + "]\n");
         for(TasksList list : lists) {
-            s.append(list + "\n");
+            s.append(list).append("\n");
         }
         return s.toString();
     }

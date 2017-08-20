@@ -23,7 +23,7 @@ public class TasksList {
     public String toString() {
         StringBuilder s = new StringBuilder("   List [" + name + "]" + "\n");
         for(Task task : tasks) {
-            s = s.append(task + "\n");
+            s.append(task).append("\n");
         }
         return s.toString();
     }
