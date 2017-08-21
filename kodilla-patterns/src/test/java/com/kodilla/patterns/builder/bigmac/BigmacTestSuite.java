@@ -8,9 +8,9 @@ public class BigmacTestSuite {
     public void testBuildNewBigmac() {
         //Given
         Bigmac bigmac = new Bigmac.BigmacBuilder()
-                .roll(Rolls.sesame)
+                .roll(Roll.sesame)
                 .burgers(2)
-                .sauce(Sauces.islands1k)
+                .sauce(Sauce.islands1k)
                 .ingredient(Ingredients.cheese)
                 .ingredient(Ingredients.bacon)
                 .ingredient(Ingredients.mushrooms)
@@ -20,7 +20,7 @@ public class BigmacTestSuite {
         //Then
         Assert.assertEquals(3, bigmac.getIngredients().size());
         Assert.assertEquals(2, bigmac.getBurgers());
-        Assert.assertEquals(Sauces.islands1k, bigmac.getSauce());
+        Assert.assertEquals(Sauce.islands1k, bigmac.getSauce());
         Assert.assertTrue(bigmac.getIngredients().contains(Ingredients.cheese));
         Assert.assertTrue(bigmac.getIngredients().contains(Ingredients.bacon));
         Assert.assertTrue(bigmac.getIngredients().contains(Ingredients.mushrooms));

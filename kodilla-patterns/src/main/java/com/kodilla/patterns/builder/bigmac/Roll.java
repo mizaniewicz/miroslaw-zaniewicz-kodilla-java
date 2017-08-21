@@ -1,5 +1,5 @@
 package com.kodilla.patterns.builder.bigmac;
 
-public enum Rolls {
+public enum Roll {
     standard, sesame
 }
