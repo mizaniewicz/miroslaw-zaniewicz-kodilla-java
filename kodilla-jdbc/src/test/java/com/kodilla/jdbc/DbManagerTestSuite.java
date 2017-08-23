@@ -29,7 +29,7 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.println(rs.getInt("ID") + ", " +
                     rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME"));
@@ -38,5 +38,32 @@ public class DbManagerTestSuite {
         rs.close();
         statement.close();
         Assert.assertEquals(5, counter);
+    }
+
+    @Test
+    public void testSelectUsersAndPosts() throws SQLException {
+        //Given
+        DbManager dbManager = DbManager.getInstance();
+
+        //When
+        String sqlQuery = "select users.FIRSTNAME, users.LASTNAME, count(*) as POSTS_NUMBER\n" +
+                "from posts, users\n" +
+                "where users.ID = posts.USER_ID\n" +
+                "group by posts.USER_ID\n" +
+                "having count(*) >= 2";
+        Statement statement = dbManager.getConnection().createStatement();
+        ResultSet rs = statement.executeQuery(sqlQuery);
+
+        //Then
+        int counter = 0;
+        while (rs.next()) {
+            System.out.println(rs.getString("FIRSTNAME") + ", " +
+                    rs.getString("LASTNAME") + ", " +
+                    rs.getInt("POSTS_NUMBER"));
+            counter++;
+        }
+        rs.close();
+        statement.close();
+        Assert.assertEquals(1, counter);
     }
 }
