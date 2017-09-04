@@ -46,7 +46,6 @@ public class Item {
         return quantity;
     }
 
-    @Column(name = "VALUE")
     public BigDecimal getValue() {
         return price.multiply(BigDecimal.valueOf(quantity));
     }

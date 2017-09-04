@@ -29,15 +29,17 @@ public class InvoiceDaoTestSuite {
         Invoice invoice = new Invoice("001");
         item1.setProduct(product);
         item2.setProduct(product);
-        productDao.save(product);
         invoice.getItems().add(item1);
         invoice.getItems().add(item2);
         //When
+        productDao.save(product);
+        int productId = product.getId();
         invoiceDao.save(invoice);
+        int invoiceId = invoice.getId();
         //Then
         Assert.assertEquals(2, invoice.getItems().size());
         //CleanUp
-        invoiceDao.deleteAll();
-        productDao.deleteAll();
+        invoiceDao.delete(invoiceId);
+        productDao.delete(productId);
     }
 }
