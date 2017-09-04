@@ -8,7 +8,7 @@ import java.util.List;
 
 @NamedQuery(
         name = "Company.retrieveCompanyByName",
-        query = "FROM Company WHERE name LIKE :COMPANYNAME"
+        query = "FROM Company WHERE name LIKE CONCAT(:COMPANYNAME, '%')"
 )
 @Entity
 @Table(name = "COMPANIES")
