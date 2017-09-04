@@ -66,7 +66,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testRetrieveEmployeeLastname() {
+    public void testRetrieveEmployeeByLastname() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Company softwareMachine = new Company("Software Machine");
@@ -76,7 +76,7 @@ public class CompanyDaoTestSuite {
         int id = johnSmith.getId();
 
         //When
-        List<Employee> employeeLastname = employeeDao.retrieveEmployeeLastname("Smith");
+        List<Employee> employeeLastname = employeeDao.retrieveEmployeeByLastname("Smith");
 
         //Then
         try {
@@ -88,7 +88,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testRetrieveCompanyName() {
+    public void testRetrieveCompanyByName() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Company softwareMachine = new Company("Software Machine");
@@ -98,7 +98,7 @@ public class CompanyDaoTestSuite {
         int id = softwareMachine.getId();
 
         //When
-        List<Company> companyName = companyDao.retrieveCompanyName();
+        List<Company> companyName = companyDao.retrieveCompanyByName("sof%");
 
         //Then
         try {

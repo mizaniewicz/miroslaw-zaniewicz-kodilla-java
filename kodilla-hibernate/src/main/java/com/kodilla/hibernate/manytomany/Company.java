@@ -7,8 +7,8 @@ import java.util.List;
 
 
 @NamedQuery(
-        name = "Company.retrieveCompanyName",
-        query = "FROM Company WHERE name LIKE 'sof%'"
+        name = "Company.retrieveCompanyByName",
+        query = "FROM Company WHERE name LIKE :COMPANYNAME"
 )
 @Entity
 @Table(name = "COMPANIES")
