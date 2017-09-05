@@ -46,6 +46,7 @@ public class Item {
         return quantity;
     }
 
+    @Transient
     public BigDecimal getValue() {
         return price.multiply(BigDecimal.valueOf(quantity));
     }
