@@ -11,7 +11,7 @@ public class PizzaTestSuite {
     public void testBasicPizza() {
         Pizza pizza = new BasicPizza();
 
-        String makePizza = pizza.makePizza();
+        String makePizza = pizza.getRecipe();
         BigDecimal cost = pizza.cost();
 
         assertEquals(new BigDecimal(15), cost);
@@ -21,9 +21,9 @@ public class PizzaTestSuite {
     @Test
     public void testBasicPizzaWithSalami() {
         Pizza pizza = new BasicPizza();
-        pizza = new Salami(pizza);
+        pizza = new SalamiPizzaDecorator(pizza);
 
-        String makePizza = pizza.makePizza();
+        String makePizza = pizza.getRecipe();
         BigDecimal cost = pizza.cost();
 
         assertEquals(new BigDecimal(20), cost);
@@ -33,10 +33,10 @@ public class PizzaTestSuite {
     @Test
     public void testBasicPizzaWithSalamiAndExtraCheese() {
         Pizza pizza = new BasicPizza();
-        pizza = new Salami(pizza);
-        pizza = new ExtraCheese(pizza);
+        pizza = new SalamiPizzaDecorator(pizza);
+        pizza = new ExtraCheeseDecorator(pizza);
 
-        String makePizza = pizza.makePizza();
+        String makePizza = pizza.getRecipe();
         BigDecimal cost = pizza.cost();
 
         assertEquals(new BigDecimal(26), cost);

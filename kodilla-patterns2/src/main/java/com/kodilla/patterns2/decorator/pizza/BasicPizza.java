@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class BasicPizza implements Pizza {
     @Override
-    public String makePizza() {
+    public String getRecipe() {
         return "Pizza with tomato sauce and cheese";
     }
 

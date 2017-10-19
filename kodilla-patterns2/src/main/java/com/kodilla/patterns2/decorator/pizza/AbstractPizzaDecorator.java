@@ -10,8 +10,8 @@ public class AbstractPizzaDecorator implements Pizza {
     }
 
     @Override
-    public String makePizza() {
-        return pizza.makePizza();
+    public String getRecipe() {
+        return pizza.getRecipe();
     }
 
     @Override

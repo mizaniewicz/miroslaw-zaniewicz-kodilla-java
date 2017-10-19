@@ -3,6 +3,6 @@ package com.kodilla.patterns2.decorator.pizza;
 import java.math.BigDecimal;
 
 public interface Pizza {
-    String makePizza();
+    String getRecipe();
     BigDecimal cost();
 }
