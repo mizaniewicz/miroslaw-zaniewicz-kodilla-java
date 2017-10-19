@@ -11,6 +11,9 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT(SUBSTRING(:COMPANYNAME, 1, 3), '%')",
         resultClass = Company.class
 )
+@NamedQuery(
+        name = "Company.retrieveCompanyByNameFragment",
+        query = "FROM Company WHERE name LIKE ('%' || :COMPANYNAME || '%')")
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
