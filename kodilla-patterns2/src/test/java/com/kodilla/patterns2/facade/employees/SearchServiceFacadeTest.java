@@ -11,4 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SearchServiceFacadeTest {
     @Autowired
     private SearchServiceFacade searchServiceFacade;
+
+    @Test
+    public void testRetrieveCompanyByName() {
+        searchServiceFacade.searchCompanyNameByFragment("of");
+    }
 }
