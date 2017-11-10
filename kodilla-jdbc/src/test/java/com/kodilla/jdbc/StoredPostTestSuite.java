@@ -50,6 +50,6 @@ public class StoredPostTestSuite {
         if (resultSet.next()) {
             howMany = resultSet.getInt("HOW_MANY");
         }
-        assertEquals(2, howMany);
+        assertEquals(1, howMany);
     }
 }
